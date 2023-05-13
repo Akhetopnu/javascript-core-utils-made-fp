@@ -1,5 +1,5 @@
 {
-  "name": "@mateuszwalas/fp",
+  "name": "javascript-core-utils-made-fp",
   "version": "1.0.0",
   "description": "A bunch of core javascript utilities made functional.",
   "main": "index.js",

@@ -29,7 +29,7 @@ export const replace_by$ = (regex, substitution) => string => replace(string, re
 
 export const includes = (string, substring, start) => string.includes(substring, start);
 export const includes$ = string => (substring, start) => includes(string, substring, start);
-export const includes_by = (substring, start) => string => includes(string, substring, start);
+export const includes_by = (substring, start, string) => includes(string, substring, start);
 export const includes_by$ = (substring, start) => string => includes(string, substring, start);
 
 export const lower = string => string.toLowerCase();
