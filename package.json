@@ -1,0 +1,10 @@
+{
+  "name": "@mateuszwalas/fp",
+  "version": "1.0.0",
+  "description": "A bunch of core javascript utilities made functional.",
+  "main": "index.js",
+  "scripts": {},
+  "keywords": [],
+  "author": "",
+  "license": "WTFPL"
+}
