@@ -11,14 +11,20 @@ export const identity = x => x;
 export const noop = () => {};
 export const is = x => typeof x === 'function';
 
-export const after = (fn1, fn2) => () => {
-  fn1();
-  fn2();
+export const after = (base, after) => () => {
+  base();
+  after();
 };
 
-export const before = (fn1, fn2) => () => {
-  fn2();
-  fn1();
+export const around = (base, around) => () => {
+  around();
+  base();
+  around();
+};
+
+export const before = (base, before) => () => {
+  before();
+  base();
 };
 
 export const when = (check, then) => data => check(data) && then(data);

@@ -18,9 +18,19 @@ export const concat = (a, b) => a.concat(b);
 export const concat$ = a => b => concat(a, b);
 
 export const copy = (array, index, value) => array.with(index, value);
-export const copy$ = array => (index, value) => copy_with(array, index, value);
-export const copy_by = (index, value) => array => copy_with(array, index, value);
-export const copy_by$ = (index, value) => array => copy_with(array, index, value);
+export const copy$ = array => (index, value) => copy(array, index, value);
+export const copy_by = (index, value) => array => copy(array, index, value);
+export const copy_by$ = (index, value) => array => copy(array, index, value);
+
+export const copy_from = (arraylike, fn, context) => Array.from(arraylike, fn, context);
+export const copy_from$ = arraylike => (fn, context) => from(arraylike, fn, context);
+export const copy_from_by = (fn, context) => arraylike => from(arraylike, fn, context);
+export const copy_from_by$ = (fn, context) => arraylike => from(arraylike, fn, context);
+
+export const copy_within = (array, index, start, end) => array.copyWithin(array, index, start, end);
+export const copy_within$ = array => (index, start, end) => copy_within(array, index, start, end);
+export const copy_within_by = (index, start, end) => array => copy_within(array, index, start, end);
+export const copy_within_by$ = (index, start, end) => array => copy_within(array, index, start, end);
 
 export const every = (array, fn, context) => array.every(fn, context);
 export const every$ = array => (fn, context) => every(array, fn, context);
@@ -83,10 +93,15 @@ export const is = Array.isArray;
 
 export const join = (array, separator) => array.join(separator);
 export const join$ = array => separator => join(array, separator);
-export const join_by = (separator, array) => array.join(separator);
+export const join_by = (separator, array) => join(array, separator);
 export const join_by$ = separator => array => join(array, separator);
 
 export const len = array => array.length;
+
+export const resize = (array, len) => ((array.length = len), array);
+export const resize$ = array => len => resize(array, len);
+export const resize_by = (len, array) => resize(array, len);
+export const resize_by$ = len => array => resize(array, len);
 
 export const map_flat = (array, fn, context) => array.flatMap(fn, context);
 export const map_flat$ = array => (fn, context) => map_flat(array, fn, context);
